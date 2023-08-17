@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Details Of {{DOS.Scname}} object</h1>
+        <h1>Name of School is {{DOS.Scname}}</h1>
+        <h1>principal of School is {{DOS.Scprinc}}</h1>
+        <h1>location of School is {{DOS.Scloc}}</h1>
+        <table border="px">
+            
+        <tr>
+            <th>{{Sid}}</th>
+            <th>{{Sname}}</th>
+            <th>{{Sage}}</th>
+        </tr>
+        
+            {% for sc in DOS.panda.all %}
+            <tr>
+            <td>{{sc.Sid}}</td>
+            <td>{{sc.Sname}}</td>
+            <td>{{sc.Sage}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        
+        <h1><a href="{% url 'update' pk=DOS.pk %}">update</a></h1>
+
+        <h1><a href="{% url 'delete' pk=DOS.pk %}">Delete</a></h1>
+    </center>
+</body>
+</html>

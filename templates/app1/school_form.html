@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Create</title>
+</head>
+<body>
+    <center>
+        {% if form.instance.pk %}
+        <h1>Update Scholl Form</h1>
+        {% else %}
+        <h1>Create School Form</h1>
+        {% endif %}
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+            
+            {% if form.instance.pk %}
+            <input type="submit" value="Update" class="btn btn-secondary">
+            {% else %}
+            <input type="submit" value="Create" class="btn btn-success">
+            {% endif %}
+        </form>
+    </center>
+</body>
+</html>
